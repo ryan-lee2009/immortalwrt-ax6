@@ -1,11 +1,29 @@
-src-git nss_packages https://github.com/qosmio/nss-packages.git
-#src-git sqm_scripts_nss https://github.com/qosmio/sqm-scripts-nss.git
-src-git sqm_scripts_nss https://github.com/JuliusBairaktaris/sqm-scripts-nss.git
+# ==============================================
+# AX6 (IPQ5018) ImmortalWrt 插件源配置 (最终版)
+# ==============================================
+
+# -------------- 官方基础源 (保留，核心依赖) --------------
 src-git packages https://github.com/immortalwrt/packages.git
 src-git luci https://github.com/immortalwrt/luci.git
 src-git routing https://github.com/openwrt/routing.git
 src-git telephony https://github.com/openwrt/telephony.git
 src-git video https://github.com/openwrt/video.git
+
+# -------------- 高通 NSS 驱动源 (AX6 专用，保留) --------------
+src-git nss_packages https://github.com/qosmio/nss-packages.git
+src-git sqm_scripts_nss https://github.com/JuliusBairaktaris/sqm-scripts-nss.git
+
+# -------------- 第三方插件源 (核心，加插件全靠它) --------------
+# Helloworld 源 (PassWall 核心，科学上网必备)
+src-git helloworld https://github.com/fw876/helloworld
+# Kenzo 大源 (OpenClash、AdGuardHome 等大量常用插件)
+src-git kenzo https://github.com/kenzok8/openwrt-packages
+# Small 依赖库 (Kenzo 源的配套依赖，必须加，否则编译报错)
+src-git small https://github.com/kenzok8/small
+# opentopd 源 (网络加速、定时任务等实用工具)
+src-git opentopd https://github.com/sirpdboy/opentopd
+
+# -------------- 注释掉无用源 (避免冲突) --------------
 #src-git targets https://github.com/openwrt/targets.git
 #src-git oldpackages http://git.openwrt.org/packages.git
 #src-link custom /usr/src/openwrt/custom-feed
